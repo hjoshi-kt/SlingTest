@@ -8,6 +8,7 @@
 
 import React from 'react';
 import type {Node} from 'react';
+import ReactMoE from 'react-native-moengage';
 import {
   SafeAreaView,
   ScrollView,
@@ -53,11 +54,18 @@ const Section = ({children, title}): Node => {
 };
 
 const App: () => Node = () => {
+
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  ReactMoE.initialize("48VL1XKY8O8FKT6MO00XGEWA");
+
+//   useEffect(() => {
+//     ReactMoE.initialize("48VL1XKY8O8FKT6MO00XGEWA");
+// }, []);
 
   return (
     <SafeAreaView style={backgroundStyle}>
