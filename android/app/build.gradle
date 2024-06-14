@@ -33,6 +33,7 @@ react {
     // bundleConfig = file(../rn-cli.config.js)
     //
     //   The name of the generated asset file containing your JS bundle
+
     // bundleAssetName = "MyApplication.android.bundle"
     //
     //   The entry file for bundle generation. Default is 'index.android.js' or 'index.js'
@@ -73,7 +74,7 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.rndiffapp"
+    namespace "com.slingtest"
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -118,11 +119,13 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.4.2")
     implementation("androidx.lifecycle:lifecycle-process:2.6.2")
 
-    implementation("com.moengage:moe-android-sdk:13.00.03")
+    // implementation("com.moengage:moe-android-sdk:13.00.03")
 
     implementation project(":react-native-moengage")
 
     implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+
+    debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
 
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
         exclude group:'com.squareup.okhttp3', module:'okhttp'
